@@ -12,7 +12,16 @@ This is a Rails API that consumes several different APIs and outputs a new produ
 
 TBD
 
-## Incorporated APIs
+## Features
+
+API that provides data for a city name search. Results include:
+
+  - today's weather
+  - weather for the next 5 days
+  - photos of that city
+  - top news stories for today
+
+### Incorporated APIs
 
 * weatherunderground
 * New York Times
