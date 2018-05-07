@@ -1,0 +1,15 @@
+console.log('show.js.erb reporting for duty')
+var url = "https://api.nytimes.com/svc/semantic/v2/concept/search.json";
+url += '?' + $.param({
+  'api-key': '<%= ENV["NYT_API_KEY"] %>',
+  'query': "<%= @city %>",
+  'fields': "article_list"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
+});

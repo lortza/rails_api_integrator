@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 gem 'jsonapi-rails'
 gem 'awesome_print', :require => 'ap' #makes command line data prettier
+gem 'httparty'
 
 
 group :development, :test do
