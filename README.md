@@ -10,33 +10,40 @@ This is a Rails API that consumes several different APIs and outputs a new produ
 
 ## Getting Started
 
-TBD
+To run this locally, start `rails server` then browse to:
+
+```
+http://localhost:4517
+```
 
 ## Features
 
 API that provides data for a city name search. Results include:
 
   - today's weather
-  - WIP weather for the next 5 days
+  - WIP: weather for the next 5 days
   - photos of that city
   - news stories for that city
   - events in that city for the next 30 days
 
 #### Incorporated APIs
 
-* weatherunderground
-* New York Times
-* flickr photo search
-* Eventful
+* [weatherunderground](https://www.wunderground.com/weather/api/d/docs?d=index)
+* [New York Times](https://developer.nytimes.com/)
+* [flickr photo search](https://www.flickr.com/services/api/)
+* [Eventful](http://api.eventful.com/json/events/)
 
 ## Endpoint
 
-The endpoint is just the state and city.
+The endpoint takes state and city parameters.
 
 ```
 http://localhost:4517/reports/tx/austin
+```
 
-# cities with spaces in the name are okay
+Cities with spaces in the name are okay too.
+
+```
 http://localhost:4517/reports/la/new orleans
 ```
 
