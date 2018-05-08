@@ -1,5 +1,9 @@
 class Weather
 
+  # Weather Underground API
+  # Docs: https://www.wunderground.com/weather/api/d/docs
+  # Sample endpoint: http://api.wunderground.com/api/#{API_KEY}/forecast/q/CA/San_Francisco.json
+
   def self.set_weather_report(city, state)
     puts "Building Weather Report"
 

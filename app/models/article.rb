@@ -1,5 +1,8 @@
 class Article
 
+  # New York Times API
+  # Docs: https://developer.nytimes.com/
+
   def self.get_articles(city, state)
     puts "Fetching Articles about #{city}, #{state}"
 

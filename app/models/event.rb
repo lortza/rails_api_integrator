@@ -1,5 +1,10 @@
 class Event
 
+  # Eventful API
+  # Docs: http://api.eventful.com/docs
+  # Sample Endpoint: http://api.eventful.com/json/events/search?app_key=API_KEY&l=denver&t=Next+30+Days
+
+
   def self.get_events(city, state)
     puts "Fetching Events near #{city}, #{state}"
 

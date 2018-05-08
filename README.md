@@ -20,11 +20,13 @@ API that provides data for a city name search. Results include:
 
 #### Incorporated APIs
 
-* [GeoDB](http://geodb-city-api.wirefreethought.com/docs/guides/getting-started/test-drive)
+All of these APIs have a free tier.
+
+* [GeoDB](http://geodb-city-api.wirefreethought.com/docs/guides/getting-started/test-drive) (requires Credit Card #, but does not charge it)
 * [weatherunderground](https://www.wunderground.com/weather/api/d/docs?d=index)
 * [New York Times](https://developer.nytimes.com/)
 * [flickr photo search](https://www.flickr.com/services/api/)
-* [Eventful](http://api.eventful.com/json/events/)
+* [Eventful](http://api.eventful.com/docs)
 
 ## Getting Started
 

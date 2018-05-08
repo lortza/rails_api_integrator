@@ -1,5 +1,9 @@
 class GeoLocation
 
+  # GeoDB API
+  # Docs: http://geodb-city-api.wirefreethought.com/api-reference/find-nearby-cities-for-city-api
+  # Docs: https://rapidapi.com/wirefreethought/api/GeoDB/functions/Cities%20Near%20City
+
   BASE_URL = "https://wft-geo-db.p.mashape.com/v1/geo/cities"
 
   def self.get_nearby_cities(city, state)
