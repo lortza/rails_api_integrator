@@ -2,7 +2,7 @@ class Weather
 
   def self.set_weather_report(city, state)
     weather_report = {
-      current_city: self.get_weather(city.titleize, state.upcase),
+      current_city: self.get_weather(city state),
       nearby_cities: []
     }
 
