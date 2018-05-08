@@ -61,6 +61,8 @@ photos
 
 ### Sample Output
 
+In the future, output will be in `jsonapi`. For now, it is this:
+
 ```
 {
   "state":"la",
