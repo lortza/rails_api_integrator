@@ -61,91 +61,111 @@ photos
 
 ### Sample Output
 
-In the future, output will be in `jsonapi`. For now, it is this:
+Output is formatted in `jsonapi` with the help of `gem 'jsonapi-rails'`.
 
 ```
 {
-  "state":"la",
-  "city":"new orleans",
-
-  "weather":{
-    "current_city":{
-      "city":"new orleans",
-      "state":"la",
-      "local_time":"Mon, 07 May 2018 19:37:40 -0500",
-      "description":"Clear",
-      "temperature":"86.7 F (30.4 C)"
-    },
-    "nearby_cities":[
+  "data":
+  {
+    "id":"2018-05-08 14:15:10 -0500",
+    "type":"reports",
+    "attributes":
+    {
+      "state":"LA",
+      "city":"New Orleans",
+      "weather":
       {
-        "city":"Gretna",
-        "state":"LA",
-        "local_time":"Mon, 07 May 2018 19:32:43 -0500",
-        "description":"Clear","temperature":"86.6 F (30.3 C)"
+        "current_city":
+        {
+          "city":"New Orleans",
+          "state":"LA",
+          "local_time":"Tue, 08 May 2018 14:10:39 -0500",
+          "description":"Clear",
+          "temperature":"90.9 F (32.7 C)"
+        },
+        "nearby_cities":
+        [
+          {
+            "city":"Gretna",
+            "state":"LA",
+            "local_time":"Tue, 08 May 2018 14:05:03 -0500",
+            "description":"Clear",
+            "temperature":"92.0 F (33.3 C)"
+          },
+          {
+            "city":"Harvey",
+            "state":"LA",
+            "local_time":"Tue, 08 May 2018 14:10:52 -0500",
+            "description":"Scattered Clouds",
+            "temperature":"91.6 F (33.1 C)"
+          }
+        ]
       },
-      {
-        "city":"Harvey",
-        "state":"LA",
-        "local_time":"Mon, 07 May 2018 19:34:05 -0500",
-        "description":"Clear",
-        "temperature":"85.5 F (29.7 C)"
-      }
-    ]
+
+      "articles": [
+        {
+          "title":"At 91, Ella Brennan Still Feeds (and Leads) New Orleans",
+          "url":"https://www.nytimes.com/2017/03/27/dining/ella-brennan-new-orleans-restaurants.html"
+        },
+        {
+          "title":"In Prospect New Orleans, a Curator Guides 73 Artists Toward Higher Ground",
+          "url":"https://www.nytimes.com/2017/11/23/arts/design/prospect-new-orleans-trevor-schoonmaker-artists.html"
+        },
+        {
+          "title":"Who Runs the Streets of New Orleans?",
+          "url":"https://www.nytimes.com/2015/08/02/magazine/who-runs-the-streets-of-new-orleans.html"
+        },
+        {
+          "title":"What to Do With the Swastika in the Attic?",
+        "url":"https://www.nytimes.com/2017/07/07/opinion/sunday/what-to-do-with-the-swastika-in-the-attic.html"},
+        {
+          "title":"New Orleans and U.S. in Standoff on Detentions",
+          "url":"https://www.nytimes.com/2013/08/13/us/new-orleans-and-us-in-standoff-on-detentions.html"
+        }
+      ],
+
+      "events":[
+        {
+          "name":"Company of Thieves (18+ Event)",
+          "date":"2018-05-16 20:00:00",
+          "url":"http://neworleans.eventful.com/events/company-thieves-18-event-/E0-001-112847870-5?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic",
+          "venue":"House of Blues - New Orleans",
+          "venue_url":"http://neworleans.eventful.com/venues/house-of-blues-new-orleans-/V0-001-001541179-5?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic"
+        },
+        {
+          "name":"Kermit Ruffins and the BBQ Swingers – 7pm Show",
+          "date":"2018-05-19 00:00:00",
+          "url":"http://neworleans.eventful.com/events/kermit-ruffins-and-bbq-swingers-7pm-show-/E0-001-114099927-3?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic",
+          "venue":"The Little Gem Saloon",
+          "venue_url":"http://neworleans.eventful.com/venues/the-little-gem-saloon-/V0-001-006655060-7?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic"
+        }
+      ],
+
+      "photos":[
+        {
+          "author":"11018968@N00",
+          "caption":"Dough",
+          "url":"https://farm1.staticflickr.com/823/41240478964_fef77b43dd.jpg"
+        },
+        {
+          "author":"78348039@N03",
+          "caption":"Benachi family tomb. St Louis Cemetery No. 3. New Orleans, La.",
+          "url":"https://farm1.staticflickr.com/981/41958002261_4b7632cff3.jpg"
+        },
+        {
+          "author":"11018968@N00",
+          "caption":"Muslims on the Bayou",
+          "url":"https://farm1.staticflickr.com/825/40151220400_409861e123.jpg"
+        },
+        {
+          "author":"11018968@N00",
+          "caption":"Oyster Dinner",
+          "url":"https://farm1.staticflickr.com/960/40151216230_2572ac6f95.jpg"
+        }
+      ]
+    }
   },
 
-  "articles":[
-    {
-      "title":"A New Orleans Restaurant Where Creole Meets Caribbean",
-      "url":"https://www.nytimes.com/2016/02/28/travel/new-orleans-restaurant-compere-lapin-review.html"
-    },
-    {
-      "title":"Who Runs the Streets of New Orleans?",
-      "url":"https://www.nytimes.com/2015/08/02/magazine/who-runs-the-streets-of-new-orleans.html"
-    },
-    {
-      "title":"What to Do With the Swastika in the Attic?",
-      "url":"https://www.nytimes.com/2017/07/07/opinion/sunday/what-to-do-with-the-swastika-in-the-attic.html"
-    }
-  ],
-
-  "events":[
-    {
-      "name":"Company of Thieves (18+ Event)",
-      "date":"2018-05-16 20:00:00",
-      "url":"http://neworleans.eventful.com/events/company-thieves-18-event-/E0-001-112847870-5?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic",
-      "venue":"House of Blues - New Orleans",
-      "venue_url":"http://neworleans.eventful.com/venues/house-of-blues-new-orleans-/V0-001-001541179-5?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic"
-    },
-    {
-      "name":"Kermit Ruffins and the BBQ Swingers – 7pm Show",
-      "date":"2018-05-19 00:00:00",
-      "url":"http://neworleans.eventful.com/events/kermit-ruffins-and-bbq-swingers-7pm-show-/E0-001-114099927-3?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic",
-      "venue":"The Little Gem Saloon",
-      "venue_url":"http://neworleans.eventful.com/venues/the-little-gem-saloon-/V0-001-006655060-7?utm_source=apis\u0026utm_medium=apim\u0026utm_campaign=apic"
-    }
-  ],
-
-  "photos":[
-    {
-      "author":"11018968@N00",
-      "caption":"Dough",
-      "url":"https://farm1.staticflickr.com/823/41240478964_fef77b43dd.jpg"
-    },
-    {
-      "author":"78348039@N03",
-      "caption":"Benachi family tomb. St Louis Cemetery No. 3. New Orleans, La.",
-      "url":"https://farm1.staticflickr.com/981/41958002261_4b7632cff3.jpg"
-    },
-    {
-      "author":"11018968@N00",
-      "caption":"Muslims on the Bayou",
-      "url":"https://farm1.staticflickr.com/825/40151220400_409861e123.jpg"
-    },
-    {
-      "author":"11018968@N00",
-      "caption":"Oyster Dinner",
-      "url":"https://farm1.staticflickr.com/960/40151216230_2572ac6f95.jpg"
-    }
-  ]
+  "jsonapi": { "version":"1.0" }
 }
 ```
