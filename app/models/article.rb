@@ -1,6 +1,8 @@
 class Article
 
   def self.get_articles(city, state)
+    puts "Fetching Articles about #{city}, #{state}"
+
     response = HTTParty.get("http://api.nytimes.com/svc/semantic/v2/concept/search.json?query=#{city}, #{state}&fields=article_list&api-key=#{ENV['NYT_API_KEY']}")
 
     self.build_records(response)

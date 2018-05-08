@@ -1,8 +1,10 @@
 class Weather
 
   def self.set_weather_report(city, state)
+    puts "Building Weather Report"
+
     weather_report = {
-      current_city: self.get_weather(city state),
+      current_city: self.get_weather(city, state),
       nearby_cities: []
     }
 

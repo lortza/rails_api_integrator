@@ -1,6 +1,8 @@
 class Photo
 
    def self.get_photos(city)
+    puts "Finding Photos that mention #{city}"
+
     response = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=#{ENV['PHOTO_API_KEY']}&text=#{city}&format=json")
 
     formatted_response = self.format_response(response)

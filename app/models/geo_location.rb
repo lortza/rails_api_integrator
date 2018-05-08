@@ -3,6 +3,8 @@ class GeoLocation
   BASE_URL = "https://wft-geo-db.p.mashape.com/v1/geo/cities"
 
   def self.get_nearby_cities(city, state)
+    puts "Getting Nearby Cities"
+
     qty_cities = 2
     mile_radius = 50
 

@@ -1,6 +1,8 @@
 class Event
 
   def self.get_events(city, state)
+    puts "Fetching Events near #{city}, #{state}"
+
     response = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['EVENTS_API_KEY']}&l=#{city}, #{state}&t=Next+30+Days")
 
     formatted_response = JSON.parse(response)
