@@ -8,14 +8,6 @@ This is a Rails API that consumes several different APIs and outputs a new produ
 * JSON-API formatting with `gem 'jsonapi-rails'`
 * Runs on port 4517 (localhost:4517)
 
-## Getting Started
-
-To run this locally, start `rails server` then browse to:
-
-```
-http://localhost:4517
-```
-
 ## Features
 
 API that provides data for a city name search. Results include:
@@ -33,6 +25,16 @@ API that provides data for a city name search. Results include:
 * [New York Times](https://developer.nytimes.com/)
 * [flickr photo search](https://www.flickr.com/services/api/)
 * [Eventful](http://api.eventful.com/json/events/)
+
+## Getting Started
+
+To run this locally, start `rails server` then browse to:
+
+```
+http://localhost:4517
+```
+
+This API is not hosted anywhere, so you will also need API keys for all of the APIs listed above in order to run it locally.
 
 ## Endpoint
 
