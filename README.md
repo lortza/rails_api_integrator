@@ -140,7 +140,9 @@ photos
       "url":"https://farm1.staticflickr.com/825/40151220400_409861e123.jpg"
     },
     {
-      "author":"11018968@N00","caption":"Oyster Dinner","url":"https://farm1.staticflickr.com/960/40151216230_2572ac6f95.jpg"
+      "author":"11018968@N00",
+      "caption":"Oyster Dinner",
+      "url":"https://farm1.staticflickr.com/960/40151216230_2572ac6f95.jpg"
     }
   ]
 }
