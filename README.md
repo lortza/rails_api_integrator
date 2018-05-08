@@ -20,14 +20,15 @@ http://localhost:4517
 
 API that provides data for a city name search. Results include:
 
-  - today's weather
-  - WIP: weather for the next 5 days
+  - today's weather for the provided city
+  - weather for nearby cities
   - photos of that city
   - news stories for that city
   - events in that city for the next 30 days
 
 #### Incorporated APIs
 
+* [GeoDB](http://geodb-city-api.wirefreethought.com/docs/guides/getting-started/test-drive)
 * [weatherunderground](https://www.wunderground.com/weather/api/d/docs?d=index)
 * [New York Times](https://developer.nytimes.com/)
 * [flickr photo search](https://www.flickr.com/services/api/)
@@ -65,10 +66,29 @@ photos
   "state":"la",
   "city":"new orleans",
 
-  "weather": {
-    "local_time":"Mon, 07 May 2018 15:47:40 -0500",
-    "description":"Clear",
-    "temperature":"91.2 F (32.9 C)"
+  "weather":{
+    "current_city":{
+      "city":"new orleans",
+      "state":"la",
+      "local_time":"Mon, 07 May 2018 19:37:40 -0500",
+      "description":"Clear",
+      "temperature":"86.7 F (30.4 C)"
+    },
+    "nearby_cities":[
+      {
+        "city":"Gretna",
+        "state":"LA",
+        "local_time":"Mon, 07 May 2018 19:32:43 -0500",
+        "description":"Clear","temperature":"86.6 F (30.3 C)"
+      },
+      {
+        "city":"Harvey",
+        "state":"LA",
+        "local_time":"Mon, 07 May 2018 19:34:05 -0500",
+        "description":"Clear",
+        "temperature":"85.5 F (29.7 C)"
+      }
+    ]
   },
 
   "articles":[
