@@ -8,6 +8,8 @@ This is a Rails API that consumes several different APIs and outputs a new produ
 * JSON-API formatting with `gem 'jsonapi-rails'`
 * Runs on port 4517 (localhost:4517)
 
+This API is presently consumed by the React App [react_rails_api_city_data](https://github.com/lortza/react_rails_api_city_data)
+
 ## Features
 
 API that provides data for a city name search. Results include:
