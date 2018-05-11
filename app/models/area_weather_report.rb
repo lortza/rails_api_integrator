@@ -21,7 +21,7 @@ end
 
 class AreaWeatherReport < AreaWeatherReportBase
   attr_reader :nearby_cities
-  # Delegate moves all of the current_city info out into the WeatherReport object
+  # Delegate moves all of the current_city info out into the AreaWeatherReport object
   delegate :state, :city, :local_time, :description, :temperature, to: :@current_city
 
   def initialize(attrs)
