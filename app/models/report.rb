@@ -17,10 +17,10 @@ class Report
   end
 
   def events
-    # @events ||= Event.get_events(@state, @city)
+    @events ||= Event.get_events(@state, @city)
   end
 
   def photos
-    # @photos ||= Photo.get_photos(@city)
+    @photos ||= Photo.get_photos(@city)
   end
 end
