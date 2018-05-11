@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
 
     @report = Report.new(state, city)
 
-    render jsonapi: @report
+    render jsonapi: @report, status: :ok
   end
 
 end
