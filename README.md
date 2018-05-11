@@ -6,7 +6,7 @@ This is a Rails API that consumes several different APIs and outputs a new produ
 * Rails 5.2.0
 * Postgres
 * JSON-API formatting with `gem 'jsonapi-rails'`
-* Runs on port 4517 (localhost:4517)
+* Runs on port 3001 (localhost:3001)
 
 This API is presently consumed by the React App [react_rails_api_city_data](https://github.com/lortza/react_rails_api_city_data)
 
@@ -35,7 +35,7 @@ All of these APIs have a free tier.
 To run this locally, start `rails server` then browse to:
 
 ```
-http://localhost:4517
+http://localhost:3001
 ```
 
 This API is not hosted anywhere, so you will also need API keys for all of the APIs listed above in order to run it locally.
@@ -45,13 +45,13 @@ This API is not hosted anywhere, so you will also need API keys for all of the A
 The endpoint takes state and city parameters.
 
 ```
-http://localhost:4517/reports/tx/austin
+http://localhost:3001/reports/tx/austin
 ```
 
 Cities with spaces in the name are okay too.
 
 ```
-http://localhost:4517/reports/la/new orleans
+http://localhost:3001/reports/la/new orleans
 ```
 
 ## Data Output
