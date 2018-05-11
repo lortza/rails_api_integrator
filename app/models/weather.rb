@@ -1,6 +1,6 @@
 class Weather < WundergroundClient
 
-  def self.find(state, city)
+  def self.get_weather_data(state, city)
     response = self.get("/conditions/q/#{state}/#{snake_case(city)}.json")
     self.new(response)
   end

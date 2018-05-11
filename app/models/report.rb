@@ -9,7 +9,7 @@ class Report
   end
 
   def area_weather
-    # @area_weather ||= AreaWeatherReport.find(@state, @city)
+    @area_weather ||= AreaWeatherReport.get_report_data(@state, @city)
   end
 
   def articles

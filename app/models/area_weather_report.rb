@@ -1,7 +1,7 @@
 class AreaWeatherReportBase
   def self.find(state, city)
     weather_report = {
-      current_city: Weather.find(state, city),
+      current_city: Weather.get_weather_data(state, city),
       nearby_cities: nearby_city_weather(state, city)
     }
 
@@ -11,7 +11,7 @@ class AreaWeatherReportBase
   private
 
   def self.nearby_city_weather(state, city)
-    nearby_cities(state, city).map { |nc| Weather.find(nc[:state], nc[:city]) }
+    nearby_cities(state, city).map { |nc| Weather.get_weather_data(nc[:state], nc[:city]) }
   end
 
   def self.nearby_cities(state, city)
