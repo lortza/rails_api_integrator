@@ -13,7 +13,7 @@ class Report
   end
 
   def articles
-    # @articles ||= Article.get_articles(@state, @city)
+    @articles ||= ArticleReport.get_report_data(@state, @city)
   end
 
   def events
