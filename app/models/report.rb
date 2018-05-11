@@ -13,11 +13,11 @@ class Report
   end
 
   def articles
-    @articles ||= Article.get_articles(@city, @state)
+    # @articles ||= Article.get_articles(@state, @city)
   end
 
   def events
-    # @events ||= Event.get_events(@city, @state)
+    # @events ||= Event.get_events(@state, @city)
   end
 
   def photos

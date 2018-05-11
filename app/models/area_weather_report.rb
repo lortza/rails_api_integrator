@@ -1,5 +1,5 @@
 class AreaWeatherReportBase
-  def self.find(state, city)
+  def self.get_report_data(state, city)
     weather_report = {
       current_city: Weather.get_weather_data(state, city),
       nearby_cities: nearby_city_weather(state, city)
@@ -15,7 +15,7 @@ class AreaWeatherReportBase
   end
 
   def self.nearby_cities(state, city)
-    @nearby_cities ||= GeoLocation.get_nearby_cities(city, state)
+    @nearby_cities ||= GeoLocation.get_nearby_cities(state, city)
   end
 end
 
