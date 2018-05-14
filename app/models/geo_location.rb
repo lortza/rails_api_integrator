@@ -9,7 +9,7 @@ class GeoLocation
   def self.get_nearby_cities(state, city)
     puts "Getting Nearby Cities"
 
-    qty_cities = 2
+    qty_cities = 3
     mile_radius = 50
 
     city_id = self.get_current_city_id(state, city)

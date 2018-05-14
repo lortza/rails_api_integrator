@@ -12,6 +12,7 @@ class Weather < WundergroundClient
     @state = response['current_observation']['display_location']['state']
     @local_time = response['current_observation']['observation_time_rfc822']
     @description = response['current_observation']['weather']
-    @temperature = response['current_observation']['temperature_string']
+    @temperature = response['current_observation']['temp_f']
+    @icon_url = response['current_observation']['icon_url']
   end
 end
