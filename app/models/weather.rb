@@ -2,7 +2,11 @@ class Weather < WundergroundClient
 
   def self.get_weather_data(state, city)
     response = self.get("/conditions/q/#{state}/#{snake_case(city)}.json")
-    self.new(response)
+    if response['current_observation']
+      self.new(response)
+    else
+      puts "Wunderground can't find a record for #{city}, #{state}. Skipping."
+    end
   end
 
   attr_reader :city, :state, :local_time, :description, :temperature

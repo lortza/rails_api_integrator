@@ -1,4 +1,5 @@
 class AreaWeatherReportBase
+
   def self.get_report_data(state, city)
     weather_report = {
       current_city: Weather.get_weather_data(state, city),
@@ -11,7 +12,7 @@ class AreaWeatherReportBase
   private
 
   def self.nearby_city_weather(state, city)
-    nearby_cities(state, city).map { |nc| Weather.get_weather_data(nc[:state], nc[:city]) }
+    nearby_cities(state, city).map { |nc| Weather.get_weather_data(nc[:state], nc[:city]) }.compact[0..2]
   end
 
   def self.nearby_cities(state, city)
