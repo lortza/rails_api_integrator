@@ -16,7 +16,7 @@ class AreaWeatherReportBase
   end
 
   def self.nearby_cities(state, city)
-    @nearby_cities ||= GeoLocation.get_nearby_cities(state, city)
+    @nearby_cities = GeoLocation.get_nearby_cities(state, city)
   end
 end
 
