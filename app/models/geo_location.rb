@@ -4,24 +4,15 @@ class GeoLocation
   # Docs: http://geodb-city-api.wirefreethought.com/api-reference/find-nearby-cities-for-city-api
   # Docs: https://rapidapi.com/wirefreethought/api/GeoDB/functions/Cities%20Near%20City
 
-  BASE_URL = "https://wft-geo-db.p.mashape.com/v1/geo/cities"
+  BASE_URL = "https://wft-geo-db.p.mashape.com/v1/geo"
+  COUNTRY_CODE = 'US'
 
   def self.get_nearby_cities(state, city)
-    puts "Getting Nearby Cities"
+    puts "Getting Nearby Cities for #{city}, #{state}"
 
-    qty_cities = 6
-    mile_radius = 100
+    cities_response = self.get_major_cities(state, city)
 
-    city_id = self.get_current_city_id(state, city)
-
-    built_url = "#{BASE_URL}/#{city_id}/nearbyCities?distanceunit=mi&limit=#{qty_cities}&radius=#{mile_radius}"
-
-    cities_response = HTTParty.get(built_url, headers: {
-        "X-Mashape-Key" => ENV['GEO_API_KEY'],
-        "X-Mashape-Host" => ENV['GEO_API_HOST']
-      })
-
-    cities_response['data'].map do |c|
+    cities_response.map do |c|
       {
         city: c['city'],
         state: c['regionCode'],
@@ -33,13 +24,18 @@ class GeoLocation
 
   private
 
-  def self.get_current_city_id(state, city)
-    city_response = HTTParty.get(
-      "#{BASE_URL}?namePrefix=#{city}&countryCodes=US", headers: {
+  def self.get_major_cities(state, city)
+    puts "Getting Major Cities in #{state}"
+
+    built_url = "#{BASE_URL}/countries/#{COUNTRY_CODE}/regions/#{state}/cities?sort=-population&offset=0&limit=6"
+
+    cities_response = HTTParty.get(
+      built_url, headers: {
           "X-Mashape-Key" => ENV['GEO_API_KEY'],
           "X-Mashape-Host" => ENV['GEO_API_HOST']
         })
-    city_response['data'][0]['id']
+    cities_excluding_current_city = cities_response['data'].select {|c| c['city'] != city }
+    cities_excluding_current_city.each {|c| c['regionCode'] = state}
   end
 
 end
