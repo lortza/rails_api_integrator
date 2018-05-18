@@ -77,33 +77,67 @@ Output is formatted in `jsonapi` with the help of `gem 'jsonapi-rails'`.
     "type":"reports",
     "attributes":
     {
-      "state":"LA",
-      "city":"New Orleans",
-      "weather":
-      {
-        "current_city":
-        {
-          "city":"New Orleans",
-          "state":"LA",
-          "local_time":"Tue, 08 May 2018 14:10:39 -0500",
-          "description":"Clear",
-          "temperature":"90.9 F (32.7 C)"
+      "state": "LA",
+      "city": "New Orleans",
+      "area_weather": {
+        "current_city": {
+          "city": "New Orleans",
+          "state": "LA",
+          "local_time": "Fri, 18 May 2018 12:17:32 -0500",
+          "description": "Partly Cloudy",
+          "temperature": 90.1,
+          "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif"
         },
-        "nearby_cities":
-        [
+        "nearby_cities": [
           {
-            "city":"Gretna",
-            "state":"LA",
-            "local_time":"Tue, 08 May 2018 14:05:03 -0500",
-            "description":"Clear",
-            "temperature":"92.0 F (33.3 C)"
+            "city": "Marrero",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:17:08 -0500",
+            "description": "Partly Cloudy",
+            "temperature": 88.6,
+            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif"
           },
           {
-            "city":"Harvey",
-            "state":"LA",
-            "local_time":"Tue, 08 May 2018 14:10:52 -0500",
-            "description":"Scattered Clouds",
-            "temperature":"91.6 F (33.1 C)"
+            "city": "Arabi",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:17:33 -0500",
+            "description": "Partly Cloudy",
+            "temperature": 92.5,
+            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif"
+          },
+          {
+            "city": "Gretna",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:12:58 -0500",
+            "description": "Scattered Clouds",
+            "temperature": 90.5,
+            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif"
+          }
+        ],
+        "major_cities": [
+          {
+            "city": "Metairie",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:17:13 -0500",
+            "description": "Scattered Clouds",
+            "temperature": 95.5,
+            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif"
+          },
+          {
+            "city": "Shreveport",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:12:51 -0500",
+            "description": "Clear",
+            "temperature": 88.2,
+            "icon_url": "http://icons.wxug.com/i/c/k/clear.gif"
+          },
+          {
+            "city": "Baton Rouge",
+            "state": "LA",
+            "local_time": "Fri, 18 May 2018 12:17:33 -0500",
+            "description": "Haze",
+            "temperature": 89.8,
+            "icon_url": "http://icons.wxug.com/i/c/k/hazy.gif"
           }
         ]
       },
