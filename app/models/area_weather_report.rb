@@ -3,8 +3,8 @@ class AreaWeatherReportBase
   def self.get_report_data(state, city)
     weather_report = {
       current_city: Weather.get_weather_data(state, city),
-      nearby_cities: city_weather(state, city, 'nearby'),
-      major_cities: city_weather(state, city, 'major')
+      nearby_cities: related_cities_weather(state, city, 'nearby'),
+      major_cities: related_cities_weather(state, city, 'major')
     }
 
     self.new(weather_report)
@@ -12,10 +12,13 @@ class AreaWeatherReportBase
 
   private
 
-  def self.city_weather(state, city, type)
+  def self.related_cities_weather(state, city, type)
     qty_cities = 3
-    cities = GeoLocation.send("get_#{type}_cities", state, city)
-    cities.map { |c| Weather.get_weather_data(c.state, c.city) }.compact[0...qty_cities]
+    self.related_cities(state, city, type).map { |c| Weather.get_weather_data(c.state, c.city) }.compact[0...qty_cities]
+  end
+
+  def self.related_cities(state, city, type)
+    GeoLocation.send("get_#{type}_cities", state, city)
   end
 end
 
