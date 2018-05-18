@@ -146,22 +146,28 @@ Output is formatted in `jsonapi` with the help of `gem 'jsonapi-rails'`.
       "articles": [
         {
           "title":"At 91, Ella Brennan Still Feeds (and Leads) New Orleans",
-          "url":"https://www.nytimes.com/2017/03/27/dining/ella-brennan-new-orleans-restaurants.html"
+          "url":"https://www.nytimes.com/2017/03/27/dining/ella-brennan-new-orleans-restaurants.html",
+          "date": "2017-05-19 22:46:58"
         },
         {
           "title":"In Prospect New Orleans, a Curator Guides 73 Artists Toward Higher Ground",
-          "url":"https://www.nytimes.com/2017/11/23/arts/design/prospect-new-orleans-trevor-schoonmaker-artists.html"
+          "url":"https://www.nytimes.com/2017/11/23/arts/design/prospect-new-orleans-trevor-schoonmaker-artists.html",
+          "date": "2017-03-27 17:05:42"
         },
         {
           "title":"Who Runs the Streets of New Orleans?",
-          "url":"https://www.nytimes.com/2015/08/02/magazine/who-runs-the-streets-of-new-orleans.html"
+          "url":"https://www.nytimes.com/2015/08/02/magazine/who-runs-the-streets-of-new-orleans.html",
+          "date": "2015-03-03 20:48:39"
         },
         {
           "title":"What to Do With the Swastika in the Attic?",
-        "url":"https://www.nytimes.com/2017/07/07/opinion/sunday/what-to-do-with-the-swastika-in-the-attic.html"},
+          "url":"https://www.nytimes.com/2017/07/07/opinion/sunday/what-to-do-with-the-swastika-in-the-attic.html",
+          "date": "2017-07-07 19:54:34"
+        },
         {
           "title":"New Orleans and U.S. in Standoff on Detentions",
-          "url":"https://www.nytimes.com/2013/08/13/us/new-orleans-and-us-in-standoff-on-detentions.html"
+          "url":"https://www.nytimes.com/2013/08/13/us/new-orleans-and-us-in-standoff-on-detentions.html",
+          "date": "2013-08-13 00:00:00"
         }
       ],
 
