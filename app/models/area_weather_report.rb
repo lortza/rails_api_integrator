@@ -13,17 +13,12 @@ class AreaWeatherReportBase
   private
 
   def self.city_weather(state, city, type)
-    send("#{type}_cities", state, city).map { |nc| Weather.get_weather_data(nc[:state], nc[:city]) }.compact[0..2]
-  end
-
-  def self.nearby_cities(state, city)
-    @nearby_cities = GeoLocation.get_nearby_cities(state, city)
-  end
-
-  def self.major_cities(state, city)
-    @major_cities = GeoLocation.get_major_cities(state, city)
+    qty_cities = 3
+    cities = GeoLocation.send("get_#{type}_cities", state, city)
+    cities.map { |c| Weather.get_weather_data(c.state, c.city) }.compact[0...qty_cities]
   end
 end
+
 
 class AreaWeatherReport < AreaWeatherReportBase
   attr_reader :nearby_cities, :major_cities

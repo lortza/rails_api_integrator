@@ -5,7 +5,7 @@ class Weather < WundergroundClient
     if response['current_observation']
       self.new(response)
     else
-      puts "Wunderground can't find a record for #{city}, #{state}. Skipping."
+      puts "Wunderground data doesn't include #{city}, #{state}. Skipping."
     end
   end
 

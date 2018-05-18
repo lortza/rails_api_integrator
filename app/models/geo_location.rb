@@ -11,21 +11,24 @@ class GeoLocation
   def self.get_major_cities(state, city)
     puts "Getting Major Cities in #{state}"
 
-    built_url = "#{BASE_URL}/countries/#{COUNTRY_CODE}/regions/#{state}/cities?sort=-population&offset=0&limit=6"
+    qty_cities = 4
+
+    built_url = "#{BASE_URL}/countries/#{COUNTRY_CODE}/regions/#{state}/cities?sort=-population&offset=0&limit=#{qty_cities}"
 
     cities_response = HTTParty.get(
       built_url, headers: {
           "X-Mashape-Key" => ENV['GEO_API_KEY'],
           "X-Mashape-Host" => ENV['GEO_API_HOST']
         })
-    cities_excluding_current_city = cities_response['data'].select {|c| c['city'] != city }
 
-    cities_excluding_current_city.map do |c|
-      {
+    cities = self.exclude_current_city(cities_response['data'], city)
+
+    cities.shuffle.map do |c|
+      self.new({
         city: c['city'],
         state: state,
         id: c['id']
-      }
+      })
     end
   end
 
@@ -33,7 +36,7 @@ class GeoLocation
   def self.get_nearby_cities(state, city)
     puts "Getting Nearby Cities for #{city}, #{state}"
 
-    qty_cities = 8
+    qty_cities = 6
     mile_radius = 100
 
     city_id = self.get_current_city_id(state, city)
@@ -45,17 +48,33 @@ class GeoLocation
         "X-Mashape-Host" => ENV['GEO_API_HOST']
       })
 
-    cities_response['data'].map do |c|
-      {
+    cities = self.exclude_current_city(cities_response['data'], city)
+
+    cities.shuffle.map do |c|
+      self.new({
         city: c['city'],
         state: c['regionCode'],
         id: c['id']
-      }
+      })
     end
   end
 
 
+  attr_reader :city, :state, :id
+
+  def initialize(attrs)
+    @city = attrs[:city]
+    @state = attrs[:state]
+    @id = attrs[:id]
+  end
+
+
   private
+
+  def self.exclude_current_city(response, city)
+    response.select {|c| c['city'] != city }
+  end
+
 
   def self.get_current_city_id(state, city)
     cities_response = HTTParty.get(
@@ -82,5 +101,4 @@ class GeoLocation
         })
     cities_response['data'].first
   end
-
 end
