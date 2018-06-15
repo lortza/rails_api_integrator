@@ -6,6 +6,7 @@ class AreaWeatherReportBase
       nearby_cities: related_cities_weather(state, city, 'nearby'),
       major_cities: related_cities_weather(state, city, 'major')
     }
+    weather_report[:nearby_cities] = weather_report[:major_cities] if weather_report[:nearby_cities].empty?
 
     self.new(weather_report)
   end
