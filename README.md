@@ -16,10 +16,10 @@ API that provides data for a city name search. Results include:
 
   - today's weather for the provided city
   - weather for nearby cities
-  - photos of that city
+  - Flikr photos from that city
   - news stories for that city
   - events in that city for the next 30 days
-  - consistent DateTime formatting for Events and Articles (ex: `2017-05-19 22:46:58`)
+  - consistent DateTime formatting for Events and Articles (ex: `2018-05-19 22:46:58`)
 
 #### Incorporated APIs
 
