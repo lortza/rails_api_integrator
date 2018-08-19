@@ -1,5 +1,7 @@
 # Rails API Integrator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/51fd012d7d70a11a1edc/maintainability)](https://codeclimate.com/github/lortza/rails_api_integrator/maintainability)
+
 This is a Rails API that consumes several different APIs and outputs a new product that's a compilation of that data.
 
 * Ruby 2.5.0
