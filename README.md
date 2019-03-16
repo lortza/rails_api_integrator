@@ -35,6 +35,31 @@ All of these APIs have a free tier.
 
 ## Getting Started
 
+Create a `.env` file in your app root directory.
+```
+touch .env
+```
+
+Add placeholders for all of your API keys, then use the links above to go get yourself keys.
+```
+# Weather Underground
+WU_API_KEY=_______
+
+# GeoDB Cities & States
+GEO_API_KEY=_______
+GEO_API_HOST=_______
+
+# New York Times API
+NYT_API_KEY=_______
+
+# Eventful
+EVENTS_API_KEY=_______
+
+# flickr Photos
+PHOTO_API_KEY=_______
+PHOTO_API_SECRET=_______
+```
+
 To run this locally, start `rails server` then browse to:
 
 ```
